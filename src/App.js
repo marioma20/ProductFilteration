@@ -1,23 +1,60 @@
-import logo from './logo.svg';
-import './App.css';
+
+// import Navbar from "./Component/.Navbar";
+// import Productslist from "./Component/Productslist";
+// import Slide from "./Component/Slide";
+// import About from "./Component/About"; 
+// import { Routes, Route} from "react-router-dom";
+// import Productdetails from "./Component/Productdetails";
+ 
+// function App() {
+//   return (
+//     <div className="App">
+//        <Navbar/>
+//        {/* <Routes>
+//         <Route
+//           path="/"
+//           element={
+//             <>
+//               <Slide/>
+//               <Productslist />
+//             </>
+//           }
+//         />
+//         <Route path="about" element={<About />} />
+//         { <Route path="product/:productId" element={<ProductDetails />} />
+//       </Routes> } */}
+//         <Slide/>
+//        <Productslist/> 
+//        <Productdetails/>
+//     </div>
+//   );
+// }
+
+// export default App;
+import Navbar from "./compoenents/Navbar";
+import ProductsList from "./compoenents/ProductsList";
+import Slider from "./compoenents/Slider";
+import { Routes, Route } from "react-router-dom";
+import About from "./compoenents/About";
+import ProductDetails from "./compoenents/ProductDetails";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Slider />
+              <ProductsList />
+            </>
+          }
+        />
+        <Route path="about" element={<About />} />
+        <Route path="product/:productId" element={<ProductDetails />} />
+      </Routes>
     </div>
   );
 }
